@@ -1,0 +1,4 @@
+SELECT d.DepartmentName, COUNT(e.EmployeeID) AS NumberOfEmployees
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+GROUP BY d.DepartmentName;

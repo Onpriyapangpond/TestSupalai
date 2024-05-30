@@ -1,0 +1,4 @@
+SELECT p.PositionName, COUNT(e.EmployeeID) AS NumberOfEmployees
+FROM Employees e
+JOIN Positions p ON e.PositionID = p.PositionID
+GROUP BY p.PositionName;

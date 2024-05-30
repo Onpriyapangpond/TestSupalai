@@ -1,0 +1,13 @@
+ที่ไม่ถูกต้อง
+
+1. การสร้าง Interface:
+    - ชื่อ `ISensor` ไม่ตรงกับที่มันควรจะเป็น เนื่องจากมันถูกเขียนผิดคำและมีข้อผิดพลาดในการสะกด ควรเปลี่ยนเป็น `ISensor` แทน.
+    - Method `InitConfig` ไม่มี modifier access ที่ต้อง ควรเป็น public
+    - Method `WriteLog` ไม่มี modifier access ที่ถูกต้อง ควรเป็น public
+
+2.การสร้าง Class
+    - ใน `TemperatureSensor` class ไม่มีการ implement ทุก method ที่ต้องการจาก ISensor interface (เช่น `InitConfig`, `ReadData`) 
+    ต้องใส่ implementation ของ method ใน class `TemperatureSensor`.
+
+
+

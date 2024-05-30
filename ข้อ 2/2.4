@@ -1,0 +1,13 @@
+SELECT e.EmployeeID, e.FirstName, e.LastName, d.DepartmentName, p.PositionName
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+JOIN Positions p ON e.PositionID = p.PositionID
+WHERE p.PositionName = 'Staff' 
+AND e.DepartmentID IN (
+    SELECT e.DepartmentID
+    FROM Employees e
+    JOIN Positions p ON e.PositionID = p.PositionID
+    WHERE p.PositionName = 'Staff'
+    GROUP BY e.DepartmentID
+    HAVING COUNT(e.EmployeeID) >= 2
+);

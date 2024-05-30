@@ -1,0 +1,6 @@
+SELECT e.EmployeeID, e.FirstName, e.LastName, d.DepartmentName, p.PositionName, s.Salary
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+JOIN Positions p ON e.PositionID = p.PositionID
+JOIN SalaryHistories s ON e.EmployeeID = s.EmployeeID
+WHERE s.Salary BETWEEN 20000 AND 60000;

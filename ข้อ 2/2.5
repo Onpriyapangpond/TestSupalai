@@ -1,0 +1,6 @@
+SELECT d.DepartmentName, p.PositionName, AVG(s.Salary) AS AverageSalary
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+JOIN Positions p ON e.PositionID = p.PositionID
+JOIN SalaryHistories s ON e.EmployeeID = s.EmployeeID
+GROUP BY d.DepartmentName, p.PositionName;
